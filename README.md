@@ -44,6 +44,16 @@ A professional GST invoice and tax billing web application for SMF, a fabricatio
    ```
 5. Open the frontend at http://localhost:5173. The API runs at http://localhost:5000/api.
 
+## Deploy to GitHub Pages
+
+The GitHub Pages workflow builds and publishes the React frontend when changes are pushed to `main`. In the repository settings, set **Pages > Build and deployment > Source** to **GitHub Actions**. After the workflow succeeds, open:
+
+https://mohanbabum911.github.io/SRI-MUNESHWARA-FABRICATION-BILLING-APP/
+
+GitHub Pages hosts only static files; it does not run the Express/SQLite backend. To use customer and invoice storage or GSTIN verification online, deploy the `server/` app to a Node.js host with a persistent database, then add a repository Actions variable named `VITE_API_BASE_URL` with the backend API URL (for example, `https://your-backend.example.com/api`). Push a new commit to rebuild the frontend with that URL. Do not put GST API credentials in this variable; configure them on the backend host.
+
+Without a hosted backend, the page can load, but API-backed features will not work online. For local use, follow the Quick Start instructions above.
+
 ## Upload to GitHub
 
 Create an empty repository on GitHub, then run these commands from the project root (replace the URL with your repository URL):
