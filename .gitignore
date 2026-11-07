@@ -1,0 +1,16 @@
+node_modules/
+**/node_modules/
+dist/
+**/dist/
+
+.env
+.env.*
+!.env.example
+
+server/db/*.db
+server/db/*.db-*
+
+/SMF tax 11 2(y).pdf
+
+*.log
+.DS_Store
